@@ -1,6 +1,8 @@
+package kotlinprogram
+
 //There are two sorted arrays nums1 and nums2 of size m and n respectively.
 //
-//Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+//Find the kotlin.median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 //
 //You may assume nums1 and nums2 cannot be both empty.
 //
@@ -9,22 +11,22 @@
 //nums1 = [1, 3]
 //nums2 = [2]
 //
-//The median is 2.0
+//The kotlin.median is 2.0
 //Example 2:
 //
 //nums1 = [1, 2]
 //nums2 = [3, 4]
 //
-//The median is (2 + 3)/2 = 2.5
+//The kotlin.median is (2 + 3)/2 = 2.5
 
 fun main(args: Array<String>) {
-    val nums1 = intArrayOf(1,3)
-    val nums2 = intArrayOf(2,4)
+    val nums1 = intArrayOf(1, 3)
+    val nums2 = intArrayOf(2, 4)
     println(findMedianSortedArrays(nums1, nums2))
     println(findMedianSortedArrays1(nums1, nums2))
 }
 
-fun findMeidanSortedArrays2(nums1:IntArray, nums2:IntArray):Double{
+fun findMeidanSortedArrays2(nums1: IntArray, nums2: IntArray): Double {
 
     // edge cases
     if(nums1.size == 0 && nums2.size == 0) return 0.0
@@ -42,8 +44,8 @@ fun findMeidanSortedArrays2(nums1:IntArray, nums2:IntArray):Double{
 
         val previous = current
 
-        val check1:Double = if(nums1.size > c1) nums1[c1].toDouble() else Double.MAX_VALUE
-        val check2:Double = if(nums2.size > c2) nums2[c2].toDouble() else Double.MAX_VALUE
+        val check1: Double = if(nums1.size > c1) nums1[c1].toDouble() else Double.MAX_VALUE
+        val check2: Double = if(nums2.size > c2) nums2[c2].toDouble() else Double.MAX_VALUE
 
         if(check1 <= check2)  {
             current = check1
@@ -68,11 +70,11 @@ fun findMeidanSortedArrays2(nums1:IntArray, nums2:IntArray):Double{
     return 0.0
 }
 
-fun findMedianSortedArrays1(nums1: IntArray, nums2:IntArray):Double{
+fun findMedianSortedArrays1(nums1: IntArray, nums2: IntArray): Double {
     return nums1.plus(nums2).apply{sort()}.median()?:0.0
 }
 
-private fun IntArray.median():Double?{
+private fun IntArray.median(): Double?{
     if(this.isEmpty()){
         return null
     }

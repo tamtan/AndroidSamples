@@ -1,3 +1,5 @@
+package kotlinprogram
+
 //1. Two Sum
 //Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 //
@@ -35,7 +37,7 @@ fun twoSum2(nums: IntArray, target: Int): IntArray {
 
     return IntArray(2)
 }
-fun twoSum1(nums: IntArray, target: Int) :IntArray{
+fun twoSum1(nums: IntArray, target: Int) : IntArray {
     val result = IntArray(2)
     val visited = mutableMapOf<Int, Int>()
     nums.forEachIndexed{

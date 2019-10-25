@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private fun initObserver() {
         viewmodel?.loginSuccess?.observe(this, Observer {
             if (it!!) {
+
                 val intent = Intent(this, RecyclerViewActivity::class.java)
                 startActivity(intent)
             }

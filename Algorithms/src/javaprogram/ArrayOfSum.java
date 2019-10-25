@@ -1,3 +1,5 @@
+package javaprogram;
+
 public class ArrayOfSum {
     public static void main(String[] s) {
         addNum(null);

@@ -3,6 +3,7 @@ package vinh.tan.tam.com.myapplication.view
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate
 import kotlinx.android.synthetic.main.activity_recycler_view.*
@@ -20,7 +21,7 @@ class RecyclerViewActivity : AppCompatActivity() {
         setContentView(layoutResId)
 
         rvList.apply {
-            layoutManager = LinearLayoutManager(this.context)
+            layoutManager = GridLayoutManager(this.context, 3)
             adapter = ListAdapter(Repos.nicCageMovies)
         }
     }

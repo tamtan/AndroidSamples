@@ -1,12 +1,11 @@
-import java.io.*;
-import java.util.*;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-import java.util.stream.IntStream;
+package javaprogram;
 
-import static java.util.stream.Collectors.toList;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-class Result {
+class Result1 {
 
     /*
      * Complete the 'countPairs' function below.
@@ -20,7 +19,7 @@ class Result {
     public static int countPairs() {
         // Write your code here
 //        List<Integer> numbers = List.of(1, 2, 5, 3, 4);
-        List<Integer> numbers = List.of(1, 1, 2, 2, 0, 0, 3,3);
+        List<Integer> numbers = List.of(1, 1, 2, 2, 3,3);
         int k = 1;
         Map pairs = new HashMap<Integer, Integer>();
         int result = 0;
@@ -36,7 +35,7 @@ class Result {
     }
 }
 
-public class JavaTest {
+public class JavaTest1 {
     public static void main(String[] args) throws IOException {
 //        BufferedReader bufferedReader;
 //        bufferedReader = new BufferedReader(new InputStreamReader(System.in));
