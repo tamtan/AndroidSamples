@@ -53,7 +53,7 @@ fun twoSum1(nums: IntArray, target: Int) : IntArray {
     }
     return result
 }
-fun twoSum(nums: IntArray, target: Int): IntArray {
+fun twoSum3(nums: IntArray, target: Int): IntArray {
     for (i in 0 until nums.size - 1)
         for (j in i + 1 until nums.size)
             if (nums[i] + nums[j] == target)
