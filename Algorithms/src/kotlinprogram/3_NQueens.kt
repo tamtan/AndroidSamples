@@ -4,6 +4,7 @@ fun main(arg: Array<String>) {
     print(solveNQueens(4).joinToString(""))
 
 }
+
 fun solveNQueens(n: Int): List<List<String>> {
     var result = mutableListOf<MutableList<String>>()
     var board = mutableListOf<String>()
@@ -17,7 +18,7 @@ fun solveNQueens(n: Int): List<List<String>> {
 }
 
 private fun backTracking(size: Int, curRow: Int, result: MutableList<MutableList<String>>, board: MutableList<String>) {
-    if (curRow == size) {
+    if (curRow == size) {//already finish the board
         result.add(board.toMutableList())
         return
     }
@@ -28,14 +29,19 @@ private fun backTracking(size: Int, curRow: Int, result: MutableList<MutableList
             chars[curCol] = 'Q'
             board[curRow] = String(chars)
             backTracking(size, curRow + 1, result, board)
-            chars[curCol] = '.' //return to previous state to try with next column
+            chars[curCol] =
+                    '.' //go to this line it means previous try does not work, so need to resturn to previous state to try with next column
             board[curRow] = String(chars)
         }
     }
-
 }
 
-private fun isValid(size: Int, curRow: Int, curCol: Int, board: MutableList<String>): Boolean {//curRow is row, curCol is column
+private fun isValid(
+    size: Int,
+    curRow: Int,
+    curCol: Int,
+    board: MutableList<String>
+): Boolean {//curRow is row, curCol is column
     for (rowIndex in 0 until curRow) {
         if (board[rowIndex][curCol] == 'Q') return false //same column
         var offset = curRow - rowIndex

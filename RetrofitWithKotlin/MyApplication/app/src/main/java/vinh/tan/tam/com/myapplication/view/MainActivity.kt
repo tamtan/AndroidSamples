@@ -1,6 +1,5 @@
 package vinh.tan.tam.com.myapplication.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -9,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
 import vinh.tan.tam.com.myapplication.R
 import vinh.tan.tam.com.myapplication.databinding.ActivityMainBinding
+import vinh.tan.tam.com.myapplication.util.Util
 import vinh.tan.tam.com.myapplication.viewmodel.LoginViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity() {
         viewmodel?.loginSuccess?.observe(this, Observer {
             if (it!!) {
 
-                val intent = Intent(this, RecyclerViewActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, RecyclerViewActivity::class.java)
+//                startActivity(intent)
+                Util.getIMEI(this)
             }
         })
 
